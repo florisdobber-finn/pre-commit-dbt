@@ -25,7 +25,7 @@ def add_space_to_parenthesis(sql: str) -> str:
 
 def check_pivot(sql: str) -> int:
     status_code = 0
-    
+
     sql_clean = replace_comments(sql)
     sql_clean = add_space_to_parenthesis(sql_clean)
     sql_split = re.split(REGEX_SPLIT, sql_clean)
@@ -46,7 +46,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     for filename in args.filenames:
         sql = Path(filename).read_text()
         status_code_file = check_pivot(
-            sql, filename
+            sql
         )
 
         if status_code_file:
