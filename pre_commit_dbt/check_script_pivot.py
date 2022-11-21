@@ -27,12 +27,10 @@ def check_pivot(sql: str) -> int:
     status_code = 0
 
     sql_clean = replace_comments(sql)
-    sql_clean = add_space_to_parenthesis(sql_clean)
-    sql_split = re.split(REGEX_SPLIT, sql_clean)
 
-    if sql_split.find('PIVOT') != -1:
+    if sql_clean.find('PIVOT') != -1:
         status_code = 1
-    
+
     return status_code
 
 
