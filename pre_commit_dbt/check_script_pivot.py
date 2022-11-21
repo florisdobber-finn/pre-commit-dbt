@@ -48,8 +48,6 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         )
 
         if status_code_file:
-            result = "\n- ".join(list(tables))  # pragma: no mutate
-
             print(
                 f"{red(filename)}: contains the PIVOT() function. "
                 f"Datafold does not support that."
